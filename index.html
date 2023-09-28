@@ -38,7 +38,7 @@
 
                 <div class="items-thumbs d-flex">
 
-                    <img v-for="hero in heroes" :src="`assets/img/${hero.image}`" class="thumb" alt="">
+                    <img v-for="(hero, index) in heroes" @click="counter = index" :class="{'active': counter === index}" :src="`assets/img/${hero.image}`" class="thumb" alt="">
 
                 </div>
 
