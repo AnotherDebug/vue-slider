@@ -53,7 +53,9 @@ createApp({
     };
   },
   methods:{
-
+upDown(isUp) {
+    isUp ? this.counter-- : this.counter++
+}
   },
   mounted() {
     console.log('MOUNTED');
