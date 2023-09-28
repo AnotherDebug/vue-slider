@@ -48,7 +48,7 @@ createApp({
         }
       ],
       counter: 0,
-      
+      slider: null
 
     };
   },
@@ -63,9 +63,11 @@ upDown(isUp) {
     if(this.counter < 0) {
         this.counter = this.heroes.length - 1;
     }
+    
 }
   },
   mounted() {
+    this.slider = setInterval(this.upDown, 2000);
     console.log('MOUNTED');
   }
 }).mount("#slider");
