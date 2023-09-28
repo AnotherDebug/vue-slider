@@ -21,24 +21,25 @@
 </head>
 
 <body>
-
+    <img :src="heroes[counter]">
     <div class="main-container">
         <div class="container">
-            <div id="slider" class="slider d-flex">
-
+            <!-- AGGIUNGERE D-FLEX -->
+            <div id="slider" class="slider d-flex ">
+                
                 <!-- IMAGES -->
-                <div class="items-slider">
-                    <img class="item" src="assets/img/01.webp" alt="">
+                <div class="items-slider" :class="{'hide': index !== counter}" v-for="(hero, index) in heroes">
+                    <img class="item" :src="`assets/img/${hero.image}`" alt="hero.image">
                     <div class="info">
-                        <h2 id="'title">Marvel's Spiderman Miles Morale</h2>
-                        <p id="text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+                        <h2 id="'title">{{hero.title}}</h2>
+                        <p id="text">{{hero.text}}</p>
                     </div>
                 </div>
 
                 <div class="items-thumbs d-flex">
-                    
-                    <img src="assets/img/01.webp" class="thumb" alt="">
-           
+
+                    <img v-for="hero in heroes" :src="`assets/img/${hero.image}`" class="thumb" alt="">
+
                 </div>
 
                 <!-- BUTTONS -->
