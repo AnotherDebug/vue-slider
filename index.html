@@ -24,7 +24,7 @@
     <img :src="heroes[counter]">
     <div class="main-container">
         <div class="container">
-            <!-- AGGIUNGERE D-FLEX -->
+            
             <div id="slider" class="slider d-flex ">
                 
                 <!-- IMAGES -->
@@ -45,10 +45,10 @@
                 <!-- BUTTONS -->
 
                 <div class="buttons d-flex">
-                    <button class="button up" title="button-left">
+                    <button @click="upDown(true)" class="button up" title="button-left">
                         <i class="fa-solid fa-angle-up fa-lg"></i>
                     </button>
-                    <button class="button down" title="button-right">
+                    <button @click="upDown(false)" class="button down" title="button-right">
                         <i class="fa-solid fa-angle-down fa-lg"></i>
                     </button>
                 </div>
