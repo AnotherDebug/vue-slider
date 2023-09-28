@@ -54,7 +54,15 @@ createApp({
   },
   methods:{
 upDown(isUp) {
-    isUp ? this.counter-- : this.counter++
+    isUp ? this.counter-- : this.counter++;
+
+    if(this.counter === this.heroes.length) {
+        this.counter = 0;
+    }
+
+    if(this.counter < 0) {
+        this.counter = this.heroes.length - 1;
+    }
 }
   },
   mounted() {
